@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="./proj.css">
+</head>
+<body>
+    <div class="screen">
+        <div class="menu">
+            <div class="option">
+                <select name="rand1" id="rand2" class="mode">
+                    <option value="One player">One player</option>
+                    <option value="Two player" selected="selected">Two player</option>
+                </select>
+            </div>
+            <div class="tab">
+                <div class="x-player">X<span class="x-count">0</span></div>
+                <div class="o-player">O<span class="o-count">0</span></div>
+            </div>
+            <div class="turn">Start game or select mode</div>
+        </div>
+        <div class="game">
+            <div class="empty-grid"></div>
+            <div class="main_game"><div class="draw">Draw</div><div class="x">X Won</div><div class="o">O Won</div><button class="state"></button><button class="state"></button><button class="state"></button><button class="state"></button><button class="state"></button><button class="state"></button><button class="state"></button><button class="state"></button><button class="state"></button></div>
+            <div class="empty-grid"></div>
+        </div>
+        <button class="button">Restart game</button>
+    </div>
+    <script src="./proj.js"></script>
+</body>
+</html>

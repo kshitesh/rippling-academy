@@ -1,0 +1,61 @@
+.Data{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3,1fr);
+}
+.image{
+    width: 100%;
+}
+.car{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    background-color: rgb(164, 221, 220);
+}
+.image{
+    flex-grow: 1;
+}
+.FilterBy{
+    text-align: center;
+    font-size: larger;
+    font-weight: bolder;
+    margin: 30px;
+    margin-bottom: 15px;
+}
+.yearButton{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 30px;
+    margin-left: 300px;
+    margin-right: 300px;
+}
+.button{
+    font-size: larger;
+    font-weight: bolder;
+    width: 150px;
+    height: 50px;
+    border-radius: 10%;
+    border: none;
+    background-color: #eee6dd;
+}
+.button:hover{
+    cursor: pointer;
+    background-color: greenyellow;
+}
+.Data{
+    padding: 25px 15px;
+    margin: 20px;
+}
+.car{
+    padding: 20px;
+}
+.carName{
+    font-size: large;
+    font-weight: bold;
+}
+.carYear{
+    font-size: large;
+    font-weight: bold;
+}

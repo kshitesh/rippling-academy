@@ -2,6 +2,8 @@ import unittest2
 import unittest.mock as mock
 import io
 import sys
+sys.path.append('..')
+import src.auto as auto
 
 class TestTicTacToe(unittest2.TestCase):
     def test_isValid(self):
@@ -99,7 +101,7 @@ class TestTicTacToe(unittest2.TestCase):
             self.assertEqual(game.winnable('X',[2,2],game.state),False)
     
     def test_getUpdate(self):
-        p=player
+        p=player('X')
         game=TicTacToe()
         p.value=mock.PropertyMock(return_value='X')
         game.winnable=mock.Mock(return_value=True)
@@ -121,16 +123,6 @@ class TestTicTacToe(unittest2.TestCase):
     def test_play(self):
         with self.subTest():
             game=TicTacToe()
-            game.noMoves=mock.Mock(return_value=True)
-            OutputCapture=io.StringIO()
-            sys.stdout = OutputCapture
-            game.play({},{},{})
-            sys.stdout = sys.__stdout__
-            s='None won!\n'
-            self.assertEqual(OutputCapture.getvalue(),s)
-            
-        with self.subTest():
-            game=TicTacToe()
             game.won=mock.PropertyMock(return_value=True)
             type(game).winner=mock.PropertyMock(return_value='X')
             OutputCapture=io.StringIO()
@@ -138,6 +130,16 @@ class TestTicTacToe(unittest2.TestCase):
             game.play({},{},{})
             sys.stdout = sys.__stdout__
             s='X won!\n'
+            self.assertEqual(OutputCapture.getvalue(),s)
+        
+        with self.subTest():
+            game=TicTacToe()
+            game.noMoves=mock.Mock(return_value=True)
+            OutputCapture=io.StringIO()
+            sys.stdout = OutputCapture
+            game.play({},{},{})
+            sys.stdout = sys.__stdout__
+            s='None won!\n'
             self.assertEqual(OutputCapture.getvalue(),s)
         
 
